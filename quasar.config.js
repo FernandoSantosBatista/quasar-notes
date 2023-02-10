@@ -92,7 +92,7 @@ module.exports = configure(function (/* ctx */) {
       config: {},
 
       // iconSet: 'material-icons', // Quasar icon set
-      // lang: 'en-US', // Quasar language pack
+      lang: 'pt-br', // Quasar language pack
 
       // For special cases outside of where the auto-import strategy can have an impact
       // (like functional components as one of the examples),
@@ -146,18 +146,68 @@ module.exports = configure(function (/* ctx */) {
 
     // https://v2.quasar.dev/quasar-cli/developing-pwa/configuring-pwa
     pwa: {
-      workboxMode: 'generateSW',
-      workboxOptions: { skipWaiting: true, clientsClaim: true },
-      // or 'injectManifest'
-      injectPwaMetaTags: true,
-      swFilename: 'sw.js',
-      manifestFilename: 'manifest.json',
-      useCredentialsForManifestTag: false
-      // useFilenameHashes: true,
-      // extendGenerateSWOptions (cfg) {}
-      // extendInjectManifestOptions (cfg) {},
-      // extendManifestJson (json) {}
-      // extendPWACustomSWConf (esbuildConf) {}
+      workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
+      workboxOptions: { skipWaiting: true, clientsClaim: true }, // only for GenerateSW
+      manifest: {
+        name: 'Quasar Notes',
+        short_name: 'Quasar Notes',
+        description: 'Aplicativo de anotações feito com Quasar Framework',
+        display: 'standalone',
+        orientation: 'portrait',
+        background_color: '#093f6e',
+        theme_color: '#093f6e',
+        categories: ['tools', 'productivity', 'finance'],
+        icons: [
+          {
+            src: 'icons/icon-128x128.png',
+            sizes: '128x128',
+            type: 'image/png'
+          },
+          {
+            src: 'icons/icon-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: 'icons/icon-256x256.png',
+            sizes: '256x256',
+            type: 'image/png'
+          },
+          {
+            src: 'icons/icon-384x384.png',
+            sizes: '384x384',
+            type: 'image/png'
+          },
+          {
+            src: 'icons/icon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
+          },
+          {
+            src: 'maskable_icon_x192.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable'
+          }
+        ],
+        screenshots: [
+          {
+            src: 'screenshot/screenshot-1',
+            sizes: '650x1048',
+            type: 'image/webpngp'
+          },
+          {
+            src: 'screenshot/screenshot-2',
+            sizes: '650x1048',
+            type: 'image/png'
+          },
+          {
+            src: 'screenshot/screenshot-3',
+            sizes: '722 × 1180',
+            type: 'image/png'
+          }
+        ]
+      }
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli/developing-cordova-apps/configuring-cordova
