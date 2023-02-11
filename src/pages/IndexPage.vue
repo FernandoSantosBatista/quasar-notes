@@ -24,7 +24,7 @@
         </q-td>
       </template>
   </q-table>
-  <q-page-sticky position="bottom-center" :offset="[18, 18]">
+  <q-page-sticky position="bottom" :offset="[0, 18]">
     <q-btn fab icon="add" color="primary" @click="goToForm" />
   </q-page-sticky>
   </q-page>
