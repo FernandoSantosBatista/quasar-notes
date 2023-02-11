@@ -4,7 +4,7 @@
       <q-toolbar>
 
         <q-toolbar-title>
-          Quasar Notes
+          MyNotes
         </q-toolbar-title>
 
         <div v-if="!!$route.meta.backButton" >
